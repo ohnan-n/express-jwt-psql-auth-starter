@@ -59,9 +59,8 @@ router.post('/login', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  console.log(req.headers)
   var decoded = jwt.decode(req.headers.authorization, config.jwtSecret);
-  console.log(decoded); //=> { foo: 'bar' }
+  console.log(decoded);
   User.findById(decoded.id)
     .then(user => {
       res.json({ user })

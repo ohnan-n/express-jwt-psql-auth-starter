@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const jwt = require('jwt-simple')
+const jwt = require('jwt-simple');
+const jwtCheck = require('express-jwt');
 const passport = require('../config/passport')
 const config = require('../config/config')
-const User = require('../models/User')
+const User = require('../models/User');
 
 /* GET users listing. */
 router.get('/', (req, res) => {
@@ -65,6 +66,19 @@ router.post('/', (req, res) => {
   User.findById(decoded.id)
     .then(user => {
       res.json({ user })
+    })
+})
+
+router.get('/:id', jwtCheck({ secret: config.jwtSecret }), (req, res) => {
+  let decoded = jwt.decode(req.headers.authorization.split(' ')[1], config.jwtSecret)
+
+  User.findById(req.params.id)
+    .then(user => {
+      if (user.id === decoded.id) {
+        res.json(user)
+      } else {
+        res.json({ message: "You are not authorized to see that" })
+      }
     })
 })
 

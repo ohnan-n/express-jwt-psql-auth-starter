@@ -1,6 +1,18 @@
 ## Express Mongo Auth Starter App
 
 1. `npm install`
+1. In the root of your project, create a `.env` file:
+
+    ```
+    touch .env
+    ```
+
+1. In `.env`, add a secret key variable to create your token. **Do not put quotes around it**:
+
+    ```
+    JWTSECRET=dieselisthebest123!
+    ```
+
 1. `POST` `/api/users/signup`
 
     ![](https://i.imgur.com/yjnaaKr.png)

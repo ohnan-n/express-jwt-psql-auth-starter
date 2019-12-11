@@ -1,4 +1,4 @@
-## Express Auth Starter App
+## Express Mongo Auth Starter App
 
 1. `npm install`
 1. `POST` `/api/users/signup`

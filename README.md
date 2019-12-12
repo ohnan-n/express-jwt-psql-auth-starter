@@ -13,6 +13,20 @@
     JWTSECRET=dieselisthebest123!
     ```
 
+1. The database specifics are located in `config/config.json`. Create a postgres development database from the command line:
+
+    ```
+    createdb jwt_auth_starter_db_dev
+    ```
+
+1. Run the migrations:
+
+    ```
+    sequelize db:migrate
+    ```
+
+1. Run `npm start`
+
 1. `POST` `/api/users/signup`
 
     ![](https://i.imgur.com/yjnaaKr.png)

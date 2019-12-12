@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 const jwt = require('jwt-simple');
 const jwtCheck = require('express-jwt');
-const passport = require('../config/passport')
-const config = require('../config/config')
-const User = require('../models/User');
+const passport = require('../passport-config/passport')
+const config = require('../passport-config/config');
+const User = require('../models').User;
 
 /* GET users listing. */
 router.get('/', (req, res) => {
@@ -21,14 +21,16 @@ router.post('/signup', (req, res) => {
       email: req.body.email,
       password: req.body.password
     }
-    User.findOne({ email: req.body.email })
-      .then((user) => {
+    User.findOne({ where: { email: req.body.email } })
+      .then(user => {
         if (!user) {
           User.create(newUser)
             .then(user => {
+              console.log(user)
               res.json({ user })
             })
         } else {
+          console.log("line 33")
           res.sendStatus(401)
         }
       })

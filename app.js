@@ -3,21 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mongoose = require('mongoose');
-const passport = require('./config/passport')()
+const passport = require('./passport-config/passport')()
 const cors = require('cors');
 
 var app = express();
-
-mongoose.connect('mongodb://localhost:27017/express-jwt-mongo-auth-starter', {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useCreateIndex: true
-})
-
-mongoose.connection.once('open', () => {
-  console.log('connected to mongo');
-})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

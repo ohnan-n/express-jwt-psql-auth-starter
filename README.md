@@ -1,4 +1,4 @@
-## Express Mongo Auth Starter App
+## Express Postgres Auth Starter App
 
 1. `npm install`
 1. In the root of your project, create a `.env` file:

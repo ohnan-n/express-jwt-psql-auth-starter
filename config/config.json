@@ -5,7 +5,7 @@
     "dialect": "postgres"
   },
   "production": {
-    "database": "database_production",
+    "dialect": "postgres",
     "use_env_variable": "DATABASE_URL"
   }
 }

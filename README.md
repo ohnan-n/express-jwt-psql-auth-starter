@@ -29,26 +29,26 @@
 
 1. `POST` `/api/users/signup`
 
-    ![](https://i.imgur.com/yjnaaKr.png)
+    ![](https://i.imgur.com/ekEuT0z.png)
 
 1. `POST` `/api/users/login`
 
-    ![](https://i.imgur.com/yrwAVmS.png)
+    ![](https://i.imgur.com/fue8r6q.png)
 
 1. `GET` `/api/users`
 
-    ![](https://i.imgur.com/VZLLF9x.png)
+    ![](https://i.imgur.com/fue8r6q.png)
 
 1. `POST` `/api/users` To decode a token
 
-    ![](https://i.imgur.com/eVIAfvk.png)
+    ![](https://i.imgur.com/VsOEjhu.png)
 
 1. `GET` `/api/users/:id` You must have a valid token to see your route.
 
-    ![](https://i.imgur.com/5TCxYLB.png)
+    ![](https://i.imgur.com/Ysh6Oj4.png)
 
     <br>
 
     **If the token doesn't belong to that user id**
 
-    ![](https://i.imgur.com/HjQ8Wsv.png)
+    ![](https://i.imgur.com/Ysh6Oj4.png)
